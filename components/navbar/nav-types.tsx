@@ -20,10 +20,6 @@ export interface AuthProps {
     text: string;
     url: string;
   };
-  signup: {
-    text: string;
-    url: string;
-  };
 }
 
 export interface MobileExtraLink {

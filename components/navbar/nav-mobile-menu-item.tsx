@@ -3,13 +3,15 @@
 import { ChevronDown } from "lucide-react";
 import { useState } from "react";
 import { MenuItem } from "./nav-types";
+import Link from "next/link";
+
 export const NavMobileMenuItem = ({ item }: { item: MenuItem }) => {
   const [isOpen, setIsOpen] = useState(false);
 
   if (item.items) {
     return (
       <div className="border-b border-gray-200">
-        <button
+        <div
           onClick={() => setIsOpen(!isOpen)}
           className="flex w-full items-center justify-between py-3 font-semibold text-left"
         >
@@ -19,11 +21,11 @@ export const NavMobileMenuItem = ({ item }: { item: MenuItem }) => {
               isOpen ? "rotate-180" : ""
             }`}
           />
-        </button>
+        </div>
         {isOpen && (
           <div className="pb-3">
             {item.items.map((subItem) => (
-              <a
+              <Link
                 key={subItem.title}
                 className="flex select-none gap-4 rounded-md p-3 leading-none outline-none transition-colors hover:bg-gray-100"
                 href={subItem.url}
@@ -37,7 +39,7 @@ export const NavMobileMenuItem = ({ item }: { item: MenuItem }) => {
                     </p>
                   )}
                 </div>
-              </a>
+              </Link>
             ))}
           </div>
         )}
@@ -46,11 +48,11 @@ export const NavMobileMenuItem = ({ item }: { item: MenuItem }) => {
   }
 
   return (
-    <a
+    <Link
       href={item.url}
       className="block py-3 font-semibold border-b border-gray-200"
     >
       {item.title}
-    </a>
+    </Link>
   );
 };

@@ -6,6 +6,7 @@ import {
 } from "./nav-data";
 import { NavDesktop } from "./nav-desktop";
 import { NavMobile } from "./nav-mobile";
+// import { AuthProps, LogoProps, MenuItem } from "./nav-types";
 import { AuthProps, LogoProps, MenuItem, MobileExtraLink } from "./nav-types";
 
 export interface Navbar1Props {

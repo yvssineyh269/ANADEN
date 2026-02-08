@@ -41,7 +41,7 @@ export default function Mission() {
       </div>
 
       {/* GRID */}
-      <div className="mt-5 lg:mt-6 grid lg:grid-cols-3 gap-8 lg:gap-12">
+      <div className="lg:mt-6 grid lg:grid-cols-3 gap-8 lg:gap-12">
         <div className="lg:col-span-1">
           <h1 className="font-bold text-2xl md:text-3xl text-gray-800">
             Le moteur de la transformation digitale aux Comores

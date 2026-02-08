@@ -1,6 +1,22 @@
-import { Book, Trees, Sunset, Zap } from "lucide-react";
+import {
+  Book,
+  Trees,
+  Sunset,
+  Zap,
+  Newspaper,
+  HandshakeIcon,
+  ShoppingCart,
+  Superscript,
+  ChevronsRightLeftIcon,
+  Archive,
+  Home,
+  UserRound,
+  UsersRound,
+  Webhook,
+} from "lucide-react";
 import { AuthProps, LogoProps, MenuItem, MobileExtraLink } from "./nav-types";
 import Image from "next/image";
+import { Certificate } from "crypto";
 
 export const defaultLogo: LogoProps = {
   url: "https://www.anaden.org",
@@ -19,13 +35,13 @@ export const defaultMenu: MenuItem[] = [
         title: "Blog",
         description:
           "Les dernières actualités, mises à jour et informations du secteur",
-        icon: <Book className="h-5 w-5 shrink-0" />,
+        icon: <Newspaper className="h-5 w-5 shrink-0" />,
         url: "/blog",
       },
       {
         title: "Partenaires",
         description: "Notre mission est d'innover et d'empowerer le monde",
-        icon: <Trees className="h-5 w-5 shrink-0" />,
+        icon: <HandshakeIcon className="h-5 w-5 shrink-0" />,
         url: "/partners",
       },
       {
@@ -39,7 +55,7 @@ export const defaultMenu: MenuItem[] = [
         title: "Support",
         description:
           "Contactez notre équipe d'assistance ou rendez-vous sur nos forums communautaires.",
-        icon: <Zap className="h-5 w-5 shrink-0" />,
+        icon: <Archive className="h-5 w-5 shrink-0" />,
         url: "#",
       },
     ],
@@ -55,15 +71,16 @@ export const defaultMenu: MenuItem[] = [
         url: "#",
       },
       {
-        title: "Contactez-nous",
-        description: "Nous sommes là pour répondre à toutes vos questions.",
-        icon: <Sunset className="h-5 w-5 shrink-0" />,
+        title: "Communauté",
+        description:
+          "Nous sommes là pour s'entreaider ensemble nous irons loin.",
+        icon: <UsersRound className="h-5 w-5 shrink-0" />,
         url: "#",
       },
       {
         title: "Statut",
         description: "Vérifiez l'état actuel de nos services et API",
-        icon: <Trees className="h-5 w-5 shrink-0" />,
+        icon: <Webhook className="h-5 w-5 shrink-0" />,
         url: "#",
       },
       {
@@ -93,8 +110,7 @@ export const defaultMobileExtraLinks: MobileExtraLink[] = [
 ];
 
 export const defaultAuth: AuthProps = {
-  login: { text: "Log in", url: "#" },
-  signup: { text: "Sign up", url: "#" },
+  login: { text: "Se connecter", url: "/login" },
 };
 
 // ============================================

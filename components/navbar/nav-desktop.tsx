@@ -1,7 +1,10 @@
-import { Button } from "../ui/button";
+import Link from "next/link";
+import { buttonVariants } from "../ui/button";
 import { NavDesktopMenuItem } from "./nav-desktop-menu-item";
 import { NavLogo } from "./nav-logo";
 import { AuthProps, LogoProps, MenuItem } from "./nav-types";
+import { cn } from "@/lib/utils";
+import { LogIn, Phone } from "lucide-react";
 
 export const NavDesktop = ({
   logo,
@@ -21,7 +24,21 @@ export const NavDesktop = ({
           ))}
         </div>
       </div>
-      <Button>Contactez nous</Button>
+      <div className="items-center gap-2 flex">
+        <Link
+          href={"#"}
+          className={cn(buttonVariants({ className: "bg-emerald-500 gap-2" }))}
+        >
+          <Phone />
+          {/* Contactez nous */}
+        </Link>
+        <Link
+          href={"#"}
+          className={cn(buttonVariants({ className: "bg-emerald-500" }))}
+        >
+          <LogIn />
+        </Link>
+      </div>
     </nav>
   );
 };
