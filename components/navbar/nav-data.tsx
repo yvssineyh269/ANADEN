@@ -36,7 +36,7 @@ export const defaultMenu: MenuItem[] = [
         description:
           "Les dernières actualités, mises à jour et informations du secteur",
         icon: <Newspaper className="h-5 w-5 shrink-0" />,
-        url: "/blog",
+        url: "#",
       },
       {
         title: "Partenaires",
