@@ -1,43 +1,55 @@
-import ImageGrid from "./image-grid";
+import Image from "next/image";
+import imageBlog from "@/public/new partner.jpg";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardTitle,
+} from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
+import Link from "next/link";
 
-export default function HeroLeft() {
+export default function BlogCard() {
   return (
-    <section className="relative overflow-hidden bg-gradient-to-br from-[#0b1220] via-[#0e1628] to-[#1b1533]">
-      {/* Grid background */}
-      <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(255,255,255,0.05)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.05)_1px,transparent_1px)] bg-[size:60px_60px]" />
+    <Link href={""}>
+      <Card className="flex justify-center p-6 bg-transparent shadow-none">
+        <div className="max-w-md w-full">
+          <div className="group bg-white rounded-3xl p-3 shadow-xl transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl">
+            {/* Image */}
+            <div className="h-72 w-full overflow-hidden rounded-2xl bg-black">
+              <Image
+                src={imageBlog}
+                alt="Astronaut on the moon – branding article cover"
+                width={800}
+                height={600}
+                className="h-full w-full object-cover object-top grayscale contrast-125 transition-transform duration-700 ease-out group-hover:scale-110"
+                priority
+              />
+            </div>
 
-      <div className="relative mx-auto max-w-7xl px-6 py-24 lg:grid lg:grid-cols-2 lg:gap-16">
-        {/* Left content */}
-        <div className="text-white">
-          <h1 className="text-4xl font-bold leading-tight sm:text-5xl lg:text-6xl">
-            We’re changing <br />
-            the way people <br />
-            connect
-          </h1>
+            {/* Content */}
+            <CardContent className="px-5 pb-5 pt-6">
+              <CardTitle className="text-2xl font-bold leading-tight text-gray-900">
+                Crafting a Timeless Brand Identity
+              </CardTitle>
 
-          <p className="mt-6 max-w-xl text-gray-300">
-            Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure
-            qui lorem cupidatat commodo. Elit sunt amet fugiat veniam
-            occaecat fugiat aliqua.
-          </p>
+              <CardDescription className="mt-3 text-sm leading-relaxed text-gray-500 line-clamp-3">
+                We're a small team in Berlin doing design work for brands that
+                want to stand out and create a lasting visual impact.
+              </CardDescription>
 
-          <div className="mt-8 flex items-center gap-6">
-            <button className="rounded-lg bg-indigo-600 px-6 py-3 text-sm font-semibold text-white hover:bg-indigo-500 transition">
-              Get started
-            </button>
+              {/* Footer */}
+              <div className="mt-8 flex items-center justify-between text-xs font-semibold text-gray-900">
+                <span className="opacity-70">5 min read</span>
 
-            <a
-              href="#"
-              className="flex items-center gap-1 text-sm font-semibold text-white hover:underline"
-            >
-              Live demo <span aria-hidden>→</span>
-            </a>
+                <div className="flex items-center gap-1 text-green-600">
+                  <Badge className="">Nouveau</Badge>
+                </div>
+              </div>
+            </CardContent>
           </div>
         </div>
-
-        {/* Right images */}
-        <ImageGrid />
-      </div>
-    </section>
+      </Card>
+    </Link>
   );
 }
